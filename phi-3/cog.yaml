@@ -1,0 +1,16 @@
+# Configuration for cog
+build:
+  gpu: true
+  python_version: "3.11"
+  system_packages:
+    - "libgl1-mesa-glx"
+    - "libglib2.0-0"
+    - "nvidia-cuda-toolkit"  # 如果需要
+  python_packages:
+    - "torch" 
+    - "transformers"
+    - "accelerate>=0.26.0"
+  run:
+    - pip install flash-attn --no-build-isolation
+predict: "predict.py:Predictor"
+
